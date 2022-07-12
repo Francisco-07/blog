@@ -2,7 +2,7 @@ const colors = {
   white: '#fff',
   black: '#000',
   yellow: '#ff7a59',
-  grey: '#faf9f6',
+  grey: '#F9E6DC',
 }
 
 const size = {

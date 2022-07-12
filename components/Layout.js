@@ -3,12 +3,12 @@ import Author from './Author'
 import PostList from './PostList'
 import Footer from './Footer'
 
-const Layout = ({ blogs }) => {
+const Layout = ({ posts }) => {
   return (
     <>
       <Navbar />
       <Author />
-      <PostList blogs={blogs} />
+      <PostList posts={posts} />
       <Footer />
     </>
   )

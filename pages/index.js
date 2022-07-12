@@ -1,19 +1,19 @@
 import Layout from '../components/Layout'
-import { getAllBlogs } from '../lib/api'
+import { getAllPosts } from '../lib/api'
 
-export default function Home({ blogs }) {
+export default function Home({ posts }) {
   return (
     <>
-      <Layout blogs={blogs} />
+      <Layout posts={posts} />
     </>
   )
 }
 
 export async function getStaticProps() {
-  const blogs = await getAllBlogs()
+  const posts = await getAllPosts()
   return {
     props: {
-      blogs,
+      posts,
     },
   }
 }

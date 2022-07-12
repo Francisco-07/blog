@@ -51,6 +51,9 @@ const RedesContainer = styled.div`
   gap: 3rem;
   svg {
     font-size: 2.1rem;
+    &:hover {
+      color: ${colors.yellow};
+    }
   }
 `
 
@@ -79,9 +82,9 @@ const Form = styled.form`
     margin-top: 1rem;
     width: 200px;
     height: 35px;
-    border: none;
-    background-color: ${colors.black};
-    color: ${colors.white};
+    border: 1px solid ${colors.black};
+    color: ${colors.black};
+    background-color: ${colors.grey};
     transition: all 0.25s;
     &:hover {
       background-color: ${colors.yellow};

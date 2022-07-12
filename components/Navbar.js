@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 import { colors } from '../styles/utils'
 
 const Navbar = () => {
@@ -6,7 +7,11 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Author>
-          <h2>JD</h2>
+          <Link href='/'>
+            <a>
+              <h2>JD</h2>
+            </a>
+          </Link>
         </Author>
         <Items>
           <a>
@@ -18,14 +23,14 @@ const Navbar = () => {
   )
 }
 
-const Container = styled.nav`
+const Container = styled.header`
   display: flex;
   justify-content: center;
   height: 60px;
   background-color: ${colors.yellow};
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;

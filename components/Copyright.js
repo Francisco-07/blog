@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import { device } from '../styles/utils'
+import { device, colors } from '../styles/utils'
 
 const Copyright = () => {
   return (
@@ -19,12 +19,11 @@ const Copyright = () => {
 }
 
 const Author = styled.p`
+  margin: 0;
   transition: all 1s;
   padding: 2rem;
-  margin-bottom: 0;
   height: 100%;
   display: flex;
-  margin-top: 1.8rem;
   font-size: 1.2rem;
   align-items: center;
   justify-content: center;

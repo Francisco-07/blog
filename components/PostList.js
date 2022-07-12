@@ -3,15 +3,16 @@ import { data } from '../data'
 import { device } from '../styles/utils'
 import styled from 'styled-components'
 
-const PostList = ({ blogs }) => {
+const PostList = ({ posts }) => {
   return (
     <Container>
-      {blogs.map((blog) => (
+      {posts.map((post) => (
         <Post
-          key={blog.slug}
-          title={blog.title}
-          subtitle={blog.subtitle}
-          img={blog.mainImage}
+          key={post.slug}
+          title={post.title}
+          subtitle={post.subtitle}
+          img={post.mainImage}
+          slug={post.slug}
         />
       ))}
     </Container>
