@@ -6,10 +6,12 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Author>
-          <h2>John Doe</h2>
+          <h2>JD</h2>
         </Author>
         <Items>
-          <a>HOME</a>
+          <a>
+            <h3>HOME</h3>
+          </a>
         </Items>
       </Wrapper>
     </Container>

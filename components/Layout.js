@@ -2,14 +2,13 @@ import Navbar from './Navbar'
 import Author from './Author'
 import PostList from './PostList'
 import Footer from './Footer'
-import Copyright from './Copyright'
 
-const Layout = () => {
+const Layout = ({ blogs }) => {
   return (
     <>
       <Navbar />
       <Author />
-      <PostList />
+      <PostList blogs={blogs} />
       <Footer />
     </>
   )

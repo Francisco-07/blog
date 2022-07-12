@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../styles/utils'
 
-const Post = ({ title, info, img }) => {
+const Post = ({ title, subtitle, img }) => {
   return (
     <Container>
       <ImgContainer>
@@ -9,7 +9,7 @@ const Post = ({ title, info, img }) => {
       </ImgContainer>
       <InfoContainer>
         <h2>{title}</h2>
-        <p>{info}</p>
+        <p>{subtitle}</p>
         <Button>Leer Mas</Button>
       </InfoContainer>
     </Container>
@@ -22,7 +22,6 @@ const Container = styled.div`
   flex-direction: column;
   background-color: ${colors.grey};
   border-radius: 5px;
-  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
 `
 const ImgContainer = styled.div`
   display: flex;
@@ -31,10 +30,11 @@ const ImgContainer = styled.div`
   height: 250px;
 `
 const Img = styled.img`
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 `
 const InfoContainer = styled.div`
   padding: 5px;
@@ -47,8 +47,7 @@ const Button = styled.div`
   font-size: 1.3rem;
   text-align: center;
   cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 2px;
 `
 
 export default Post
