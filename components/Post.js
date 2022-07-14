@@ -14,7 +14,7 @@ const Post = ({ title, subtitle, img, slug }) => {
         <p>{subtitle}</p>
       </InfoContainer>
       <Button>
-        <Link href={`/blogs/${slug}`}>
+        <Link href={`/posts/${slug}`}>
           <a>LEER MAS</a>
         </Link>
       </Button>

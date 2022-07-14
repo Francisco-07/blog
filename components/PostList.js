@@ -1,5 +1,4 @@
 import Post from './Post'
-import { data } from '../data'
 import { device } from '../styles/utils'
 import styled from 'styled-components'
 
