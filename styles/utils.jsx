@@ -1,8 +1,8 @@
 const colors = {
   white: '#fff',
   black: '#000',
-  yellow: '#ff7a59',
-  grey: '#F9E6DC',
+  yellow: '#1d3557',
+  grey: '#ced4da',
 }
 
 const size = {

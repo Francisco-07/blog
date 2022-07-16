@@ -1,56 +1,61 @@
 import styled from 'styled-components'
-import { colors, device } from '../styles/utils'
 import Link from 'next/link'
-import Image from 'next/image'
+import { colors } from '../styles/utils'
 
-const Post = ({ title, subtitle, img, slug }) => {
+const Post = ({ title, subtitle, img, slug, publishedAt }) => {
   return (
     <Container>
       <ImgContainer>
-        <Image width={300} height={300} objectFit='cover' src={img} />
+        <img src={img} />
       </ImgContainer>
       <InfoContainer>
         <h2>{title}</h2>
         <p>{subtitle}</p>
+        <Published>{publishedAt}</Published>
+        <Button>
+          {' '}
+          <Link href={`/posts/${slug}`}>
+            <a>LEER MAS</a>
+          </Link>
+        </Button>
       </InfoContainer>
-      <Button>
-        <Link href={`/posts/${slug}`}>
-          <a>LEER MAS</a>
-        </Link>
-      </Button>
     </Container>
   )
 }
 
 const Container = styled.div`
-  width: 300px;
   display: flex;
-  flex-direction: column;
+  width: 80%;
+  height: 250px;
   background-color: ${colors.grey};
   border-radius: 5px;
+  margin-bottom: 1rem;
   position: relative;
-  @media ${device.tablet} {
-    align-self: stretch;
-  }
-`
-const ImgContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
 `
 
+const ImgContainer = styled.div`
+  flex: 0.35;
+  img {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0% 0%, 100% 0, 88% 100%, 0% 100%);
+  }
+`
 const InfoContainer = styled.div`
-  padding: 5px;
-  margin-bottom: 2rem;
+  flex: 0.65;
+  margin-left: 2rem;
+  margin-top: 2.2rem;
+  h2 {
+    margin: 0;
+  }
 `
 
 const Button = styled.div`
   background-color: ${colors.yellow};
+  color: ${colors.white};
   opacity: 0.8;
   width: 120px;
   height: 40px;
@@ -59,14 +64,23 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   position: absolute;
   bottom: 0;
+  right: 0;
   &:hover {
-    background-color: ${colors.yellow};
     opacity: 1;
   }
+`
+
+const Published = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 `
 
 export default Post

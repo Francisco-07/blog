@@ -1,12 +1,13 @@
 import useSWRInfinite from 'swr/infinite'
 import PostList from '../components/PostList'
+import { colors } from '../styles/utils'
+import styled from 'styled-components'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
-const PAGE_SIZE = 1
-
-export const PaginatedPosts = ({ posts }) => {
-  const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
-    (index) => `/api/posts?offset=${index * 2}}`,
+export const PaginatedPosts = ({ posts, filter, listFilter }) => {
+  const fetcher = (url) => fetch(url).then((res) => res.json())
+  const { data, error, size, setSize } = useSWRInfinite(
+    (index) =>
+      `/api/posts?offset=${index * 6}}&date=${filter ? 'asc' : 'desc'}`,
     fetcher,
     {
       fallbackData: posts,
@@ -18,25 +19,45 @@ export const PaginatedPosts = ({ posts }) => {
     isLoadingInitialData ||
     (size > 0 && data && typeof data[size - 1] === 'undefined')
   const isEmpty = data?.[0]?.length === 0
-  const isReachingEnd =
-    isEmpty || (data && data[data.length - 1]?.length < PAGE_SIZE)
-  const isRefreshing = isValidating && data && data.length === size
-  console.log(data)
+  const isReachingEnd = isEmpty || (data && data[data.length - 1]?.length < 1)
+
   return (
     <>
       {!fetchedData ? (
         <div>loading</div>
       ) : (
-        <PostList posts={fetchedData || posts} />
+        <PostList posts={fetchedData || posts} listFilter={listFilter} />
       )}
-      <button onClick={() => setSize(size + 1)} disabled={isReachingEnd}>
-        {' '}
-        {isLoadingMore
-          ? 'loading...'
-          : isReachingEnd
-          ? 'no more issues'
-          : 'load more'}
-      </button>
+      <BtnContainer>
+        <Btn onClick={() => setSize(size + 1)} disabled={isReachingEnd}>
+          {' '}
+          {isLoadingMore
+            ? 'LOADING...'
+            : isReachingEnd
+            ? 'NO MORE POSTS'
+            : 'LOAD MORE'}
+        </Btn>
+      </BtnContainer>
     </>
   )
 }
+
+const BtnContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+`
+
+const Btn = styled.button`
+  border: none;
+  background-color: ${colors.yellow};
+  color: ${colors.white};
+  padding: 0.7rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  opacity: 0.8;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+`

@@ -67,11 +67,12 @@ const Form = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 200px;
   h2 {
     text-align: center;
   }
   input {
-    width: 200px;
+    width: 100%;
     height: 30px;
     margin-bottom: 0.3rem;
     background-color: transparent;
@@ -79,16 +80,15 @@ const Form = styled.form`
     border-bottom: 1px solid ${colors.black};
   }
   button {
+    width: 100%;
     margin-top: 1rem;
-    width: 200px;
-    height: 35px;
+    padding: 0.7rem;
     border: 1px solid ${colors.black};
     color: ${colors.black};
     background-color: ${colors.grey};
-    transition: all 0.25s;
     &:hover {
       background-color: ${colors.yellow};
-      color: black;
+      color: white;
     }
   }
 `

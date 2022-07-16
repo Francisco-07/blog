@@ -1,33 +1,58 @@
+import PostCard from './PostCard'
 import Post from './Post'
 import { device } from '../styles/utils'
 import styled from 'styled-components'
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, listFilter }) => {
   return (
     <Container>
-      {posts.map((post) => (
-        <Post
-          key={post.slug}
-          title={post.title}
-          subtitle={post.subtitle}
-          img={post.mainImage}
-          slug={post.slug}
-        />
-      ))}
+      <Wrapper>
+        {listFilter
+          ? posts.map((post) => (
+              <Post
+                key={post.slug}
+                title={post.title}
+                subtitle={post.subtitle}
+                img={post.mainImage}
+                slug={post.slug}
+                publishedAt={post.publishedAt}
+              />
+            ))
+          : posts.map((post) => (
+              <PostCard
+                key={post.slug}
+                title={post.title}
+                subtitle={post.subtitle}
+                img={post.mainImage}
+                slug={post.slug}
+                publishedAt={post.publishedAt}
+              />
+            ))}
+      </Wrapper>
     </Container>
   )
 }
 
 const Container = styled.section`
   margin-top: 3rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.3rem;
+  justify-content: center;
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.3rem;
   flex-wrap: wrap;
+  width: 100%;
   @media ${device.tablet} {
     flex-direction: row;
     justify-content: center;
+    width: 90%;
   }
 `
 

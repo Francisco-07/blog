@@ -13,11 +13,11 @@ const Navbar = () => {
             </a>
           </Link>
         </Author>
-        <Items>
+        {/* <Items>
           <a>
             <h3>HOME</h3>
           </a>
-        </Items>
+        </Items> */}
       </Wrapper>
     </Container>
   )
@@ -28,6 +28,7 @@ const Container = styled.header`
   justify-content: center;
   height: 60px;
   background-color: ${colors.yellow};
+  color: ${colors.white};
 `
 
 const Wrapper = styled.nav`
@@ -49,7 +50,7 @@ const Items = styled.div`
     cursor: pointer;
     border-bottom: 1px solid transparent;
     &:hover {
-      border-bottom: 1px solid ${colors.black};
+      border-bottom: 1px solid ${colors.white};
     }
   }
 `
