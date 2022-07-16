@@ -12,7 +12,7 @@ const Copyright = () => {
         href='https://github.com/Francisco-07'
       >
         {' '}
-        <MdKeyboardArrowRight /> Francisco Garciarena
+        <MdKeyboardArrowRight /> FG
       </a>
     </Author>
   )

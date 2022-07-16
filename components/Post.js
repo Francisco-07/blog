@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Link from 'next/link'
-import { colors } from '../styles/utils'
+import { colors, device } from '../styles/utils'
 
 const Post = ({ title, subtitle, img, slug, publishedAt }) => {
   return (
@@ -34,7 +34,11 @@ const Container = styled.div`
 `
 
 const ImgContainer = styled.div`
-  flex: 0.35;
+  display: none;
+  @media ${device.tablet} {
+    display: flex;
+    flex: 0.35;
+  }
   img {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
