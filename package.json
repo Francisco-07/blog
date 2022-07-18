@@ -11,6 +11,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.2",
+    "critters": "0.0.16",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
