@@ -3,17 +3,21 @@ import styled from 'styled-components'
 import PostContent from '../../components/PostContent'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import Image from 'next/image'
+import { device } from '../../styles/utils'
 
-const BlogDetail = ({ blog }) => {
+const PostDetail = ({ post }) => {
   return (
     <>
       <Navbar />
       <Container>
         <Wrapper>
-          <h1>{blog.title}</h1>
-          <h2>{blog.subtitle}</h2>
-          <Img src={blog.mainImage} />
-          {blog.body && <PostContent content={blog.body} />}
+          <h1>{post.title}</h1>
+          <h2>{post.subtitle}</h2>
+          <ImgContainer>
+            <Image layout='fill' src={post.mainImage} alt={post.alt} />
+          </ImgContainer>
+          {post.body && <PostContent content={post.body} />}
         </Wrapper>
       </Container>
       <Footer />
@@ -22,9 +26,9 @@ const BlogDetail = ({ blog }) => {
 }
 
 export async function getStaticProps({ params }) {
-  const blog = await getPostBySlug(params.slug)
+  const post = await getPostBySlug(params.slug)
   return {
-    props: { blog },
+    props: { post },
     revalidate: 1,
   }
 }
@@ -38,6 +42,20 @@ export async function getStaticPaths() {
   }
 }
 
+const ImgContainer = styled.div`
+  width: 100%;
+  height: 300px;
+  position: relative;
+  img {
+    border-radius: 3px;
+    object-fit: cover;
+    object-position: center;
+  }
+  @media ${device.tablet} {
+    width: 75%;
+  }
+`
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -45,12 +63,10 @@ const Container = styled.div`
 `
 const Wrapper = styled.div`
   width: 80%;
+  @media ${device.tablet} {
+    width: 75%;
+  }
 `
-const Img = styled.img`
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 3px;
-`
+const Img = styled.img``
 
-export default BlogDetail
+export default PostDetail

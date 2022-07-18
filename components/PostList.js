@@ -16,6 +16,7 @@ const PostList = ({ posts, listFilter }) => {
                 img={post.mainImage}
                 slug={post.slug}
                 publishedAt={post.publishedAt}
+                alt={post.alt}
               />
             ))
           : posts.map((post) => (
@@ -26,6 +27,7 @@ const PostList = ({ posts, listFilter }) => {
                 img={post.mainImage}
                 slug={post.slug}
                 publishedAt={post.publishedAt}
+                alt={post.alt}
               />
             ))}
       </Wrapper>
@@ -46,7 +48,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.3rem;
+  gap: 2rem;
   flex-wrap: wrap;
   width: 100%;
   @media ${device.tablet} {

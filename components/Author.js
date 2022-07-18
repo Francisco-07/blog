@@ -7,7 +7,10 @@ const Author = () => {
       <Container>
         <Wrapper>
           <div>
-            <Img src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/arnold-1648032751.jpg' />
+            <Img
+              src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/arnold-1648032751.jpg'
+              alt='author'
+            />
           </div>
           <InfoContainer>
             <h2>Hi, im John Doe</h2>

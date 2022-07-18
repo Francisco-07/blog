@@ -8,6 +8,8 @@ const FilterMenu = ({ order, listView }) => {
       <Wrapper>
         <AiOutlineUnorderedList onClick={listView} />
         <CgArrowsExchangeV onClick={order} />
+
+        <hr />
       </Wrapper>
     </Container>
   )
@@ -17,11 +19,12 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 2rem;
 `
 
 const Wrapper = styled.div`
   width: 90%;
+
   svg {
     font-size: 3rem;
     margin-left: 1rem;

@@ -50,14 +50,15 @@ const BtnContainer = styled.div`
 
 const Btn = styled.button`
   border: none;
-  background-color: ${colors.yellow};
-  color: ${colors.white};
+  background-color: ${colors.white};
+  color: ${colors.darkGrey};
+  border: 1px solid ${colors.darkGrey};
   padding: 0.7rem;
   border-radius: 3px;
   font-size: 1rem;
-  opacity: 0.8;
   cursor: pointer;
-  &:hover {
-    opacity: 1;
+  &:hover:enabled {
+    background-color: ${colors.darkGrey};
+    color: ${colors.white};
   }
 `

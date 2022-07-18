@@ -1,8 +1,9 @@
 const colors = {
   white: '#fff',
   black: '#000',
-  yellow: '#1d3557',
+  darkBlue: '#1d3557',
   grey: '#ced4da',
+  darkGrey: '#787878',
 }
 
 const size = {

@@ -3,11 +3,18 @@ import { colors, device } from '../styles/utils'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const PostCard = ({ title, subtitle, img, slug, publishedAt }) => {
+const PostCard = ({ title, subtitle, img, slug, publishedAt, alt }) => {
   return (
     <Container>
       <ImgContainer>
-        <Image width={300} height={300} objectFit='cover' src={img} />
+        <Image
+          priority
+          width={300}
+          height={300}
+          objectFit='cover'
+          src={img}
+          alt={alt}
+        />
       </ImgContainer>
       <InfoContainer>
         <h2>{title}</h2>
@@ -30,6 +37,7 @@ const Container = styled.div`
   background-color: ${colors.grey};
   border-radius: 5px;
   position: relative;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.55);
   @media ${device.tablet} {
     align-self: stretch;
   }
@@ -61,7 +69,7 @@ const InfoContainer = styled.div`
 `
 
 const Button = styled.div`
-  background-color: ${colors.yellow};
+  background-color: ${colors.darkBlue};
   color: ${colors.white};
   opacity: 0.8;
   width: 120px;

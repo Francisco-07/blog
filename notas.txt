@@ -1,2 +1,0 @@
-falta, ordenar por fecha, filtro diferentes views para los posts,
-detalles del frontend, agregar highlight code y creo qeu seria todo, boton reutilizable

@@ -27,7 +27,7 @@ const Container = styled.header`
   display: flex;
   justify-content: center;
   height: 60px;
-  background-color: ${colors.yellow};
+  background-color: ${colors.darkBlue};
   color: ${colors.white};
 `
 

@@ -1,24 +1,32 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 import Link from 'next/link'
 import { colors, device } from '../styles/utils'
 
-const Post = ({ title, subtitle, img, slug, publishedAt }) => {
+const Post = ({ title, subtitle, img, slug, publishedAt, alt }) => {
   return (
     <Container>
       <ImgContainer>
-        <img src={img} />
+        <Image
+          priority
+          width={300}
+          height={300}
+          objectFit='cover'
+          src={img}
+          alt={alt}
+        />
       </ImgContainer>
       <InfoContainer>
         <h2>{title}</h2>
         <p>{subtitle}</p>
-        <Published>{publishedAt}</Published>
-        <Button>
-          {' '}
-          <Link href={`/posts/${slug}`}>
-            <a>LEER MAS</a>
-          </Link>
-        </Button>
       </InfoContainer>
+      <Published>{publishedAt}</Published>
+      <Button>
+        {' '}
+        <Link href={`/posts/${slug}`}>
+          <a>LEER MAS</a>
+        </Link>
+      </Button>
     </Container>
   )
 }
@@ -26,10 +34,8 @@ const Post = ({ title, subtitle, img, slug, publishedAt }) => {
 const Container = styled.div`
   display: flex;
   width: 80%;
-  height: 250px;
   background-color: ${colors.grey};
   border-radius: 5px;
-  margin-bottom: 1rem;
   position: relative;
 `
 
@@ -37,28 +43,25 @@ const ImgContainer = styled.div`
   display: none;
   @media ${device.tablet} {
     display: flex;
-    flex: 0.35;
+    width: 300px;
   }
   img {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
     clip-path: polygon(0% 0%, 100% 0, 88% 100%, 0% 100%);
   }
 `
 const InfoContainer = styled.div`
-  flex: 0.65;
-  margin-left: 2rem;
-  margin-top: 2.2rem;
+  padding: 40px 15px;
+  width: 100%;
   h2 {
     margin: 0;
   }
 `
 
 const Button = styled.div`
-  background-color: ${colors.yellow};
+  background-color: ${colors.darkBlue};
   color: ${colors.white};
   opacity: 0.8;
   width: 120px;
