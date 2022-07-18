@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     setTimeout(() => setLoading(true), 3000)
   }, [])
 
-  return <>{loading ? <Component {...pageProps} /> : <LoadScreen />}</>
+  return <Component {...pageProps} />
 }
 
 export default MyApp
