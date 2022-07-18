@@ -5,7 +5,6 @@ import FilterMenu from '../components/FilterMenu'
 import { getPaginatedPosts } from '../lib/api'
 import { PaginatedPosts } from '../actions/PaginatedPosts'
 import { useState } from 'react'
-import styled from 'styled-components'
 
 export default function Home({ posts }) {
   const [filter, setFilter] = useState(false)
