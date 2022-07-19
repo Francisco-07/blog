@@ -2,14 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ['cdn.sanity.io'],
-  },
   compiler: {
     styledComponents: true,
   },
-  experimental: {
-    optimizeCss: true,
+  images: {
+    domains: ['cdn.sanity.io'],
   },
 }
 

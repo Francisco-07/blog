@@ -5,7 +5,7 @@ import { device, colors } from '../styles/utils'
 const Copyright = () => {
   return (
     <Author id='Contacto'>
-      DESARROLLO
+      Development
       <a
         target='_blank'
         rel='noreferrer'

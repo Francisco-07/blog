@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
-    setTimeout(() => setLoading(true), 3000)
+    setTimeout(() => setLoading(true), 500)
   }, [])
 
   return <Component {...pageProps} />

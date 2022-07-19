@@ -3,11 +3,7 @@ import styled from 'styled-components'
 const LoadScreen = () => {
   return (
     <Screen>
-      <Balls>
-        <div className='ball one'></div>
-        <div className='ball two'></div>
-        <div className='ball three'></div>
-      </Balls>
+      <Balls></Balls>
     </Screen>
   )
 }
@@ -18,9 +14,7 @@ const Screen = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  opacity: 0;
-  animation: fade 0.4s ease-in forwards;
-  background: black;
+  background: white;
 
   @keyframes fade {
     0% {

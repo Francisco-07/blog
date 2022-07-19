@@ -38,6 +38,7 @@ const Container = styled.footer`
   height: 90vh;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-bottom: 2rem;
   @media ${device.tablet} {
     flex-direction: row-reverse;
     height: 100%;
@@ -67,6 +68,7 @@ const Form = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 1rem;
   width: 200px;
   h2 {
     text-align: center;
