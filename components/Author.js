@@ -10,9 +10,7 @@ const Author = () => {
           <ImgContainer>
             <Image
               priority
-              width={150}
-              height={150}
-              objectFit='cover'
+              layout='fill'
               src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/arnold-1648032751.jpg'
               alt='author'
             />
@@ -44,7 +42,9 @@ const Wrapper = styled.div`
 `
 
 const ImgContainer = styled.div`
+  position: relative;
   img {
+    object-fit: cover;
     border-radius: 50%;
   }
 `

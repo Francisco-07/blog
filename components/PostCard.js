@@ -7,14 +7,7 @@ const PostCard = ({ title, subtitle, img, slug, publishedAt, alt }) => {
   return (
     <Container>
       <ImgContainer>
-        <Image
-          priority
-          width={280}
-          height={200}
-          objectFit='cover'
-          src={img}
-          alt={alt}
-        />
+        <Image priority layout='fill' src={img} alt={alt} />
       </ImgContainer>
       <InfoContainer>
         <h2>{title}</h2>
@@ -57,7 +50,9 @@ const ImgContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 200px;
+  position: relative;
   img {
+    object-fit: cover;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }

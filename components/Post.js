@@ -7,14 +7,7 @@ const Post = ({ title, subtitle, img, slug, publishedAt, alt }) => {
   return (
     <Container>
       <ImgContainer>
-        <Image
-          priority
-          width={300}
-          height={300}
-          objectFit='cover'
-          src={img}
-          alt={alt}
-        />
+        <Image priority layout='fill' src={img} alt={alt} />
       </ImgContainer>
       <InfoContainer>
         <h2>{title}</h2>
@@ -41,6 +34,7 @@ const Container = styled.div`
 
 const ImgContainer = styled.div`
   display: none;
+  position: relative;
   @media ${device.tablet} {
     display: flex;
     width: 300px;
@@ -48,7 +42,7 @@ const ImgContainer = styled.div`
   img {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-
+    object-fit: cover;
     clip-path: polygon(0% 0%, 100% 0, 88% 100%, 0% 100%);
   }
 `
