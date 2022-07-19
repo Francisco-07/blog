@@ -7,7 +7,7 @@ const Post = ({ title, subtitle, img, slug, publishedAt, alt }) => {
   return (
     <Container>
       <ImgContainer>
-        <Image priority layout='fill' src={img} alt={alt} />
+        <Image priority={true} layout='fill' src={img} alt={alt} />
       </ImgContainer>
       <InfoContainer>
         <h2>{title}</h2>

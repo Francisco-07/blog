@@ -15,7 +15,12 @@ const PostDetail = ({ post }) => {
           <h1>{post.title}</h1>
           <h2>{post.subtitle}</h2>
           <ImgContainer>
-            <Image layout='fill' src={post.mainImage} alt={post.alt} />
+            <Image
+              priority={true}
+              layout='fill'
+              src={post.mainImage}
+              alt={post.alt}
+            />
           </ImgContainer>
           {post.body && <PostContent content={post.body} />}
         </Wrapper>

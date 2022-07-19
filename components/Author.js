@@ -9,7 +9,7 @@ const Author = () => {
         <Wrapper>
           <ImgContainer>
             <Image
-              priority
+              priority={true}
               layout='fill'
               src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/arnold-1648032751.jpg'
               alt='author'

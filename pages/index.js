@@ -4,12 +4,12 @@ import Author from '../components/Author'
 import FilterMenu from '../components/FilterMenu'
 import { getPaginatedPosts } from '../lib/api'
 import { PaginatedPosts } from '../actions/PaginatedPosts'
-import { useState } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
+import { useThemeContext } from '../context/theme'
 
 export default function Home({ posts }) {
-  const [filter, setFilter] = useState(false)
-  const [listFilter, setListFilter] = useState(false)
-  console.log(posts)
+  const { filter, setFilter, listFilter, setListFilter } = useThemeContext()
+
   return (
     <div>
       <Navbar />
