@@ -9,8 +9,8 @@ const PostCard = ({ title, subtitle, img, slug, publishedAt, alt }) => {
       <ImgContainer>
         <Image
           priority
-          width={300}
-          height={300}
+          width={280}
+          height={200}
           objectFit='cover'
           src={img}
           alt={alt}
@@ -31,7 +31,7 @@ const PostCard = ({ title, subtitle, img, slug, publishedAt, alt }) => {
 }
 
 const Container = styled.div`
-  width: 300px;
+  width: 280px;
   display: flex;
   flex-direction: column;
   background-color: ${colors.grey};
@@ -56,7 +56,7 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 200px;
   img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

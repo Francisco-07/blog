@@ -1,17 +1,22 @@
 import styled from 'styled-components'
 import { device } from '../styles/utils'
+import Image from 'next/image'
 
 const Author = () => {
   return (
     <>
       <Container>
         <Wrapper>
-          <div>
-            <Img
+          <ImgContainer>
+            <Image
+              priority
+              width={150}
+              height={150}
+              objectFit='cover'
               src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/arnold-1648032751.jpg'
               alt='author'
             />
-          </div>
+          </ImgContainer>
           <InfoContainer>
             <h2>Hi, im John Doe</h2>
             <p>
@@ -38,11 +43,10 @@ const Wrapper = styled.div`
   width: 90%;
 `
 
-const Img = styled.img`
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
+const ImgContainer = styled.div`
+  img {
+    border-radius: 50%;
+  }
 `
 const InfoContainer = styled.div`
   width: 90%;
