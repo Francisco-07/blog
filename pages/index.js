@@ -4,7 +4,6 @@ import Author from '../components/Author'
 import FilterMenu from '../components/FilterMenu'
 import { getPaginatedPosts } from '../lib/api'
 import { PaginatedPosts } from '../actions/PaginatedPosts'
-import { useState, useEffect, useLayoutEffect } from 'react'
 import { useThemeContext } from '../context/theme'
 
 export default function Home({ posts }) {

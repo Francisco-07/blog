@@ -43,6 +43,9 @@ const Wrapper = styled.div`
 
 const ImgContainer = styled.div`
   position: relative;
+  width: 150px;
+  height: 150px;
+
   img {
     object-fit: cover;
     border-radius: 50%;
