@@ -71,8 +71,8 @@ const Button = styled.div`
   height: 40px;
   font-size: 1.3rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: center;
   cursor: pointer;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -80,6 +80,9 @@ const Button = styled.div`
   bottom: 0;
   &:hover {
     opacity: 1;
+  }
+  a {
+    width: 100%;
   }
 `
 

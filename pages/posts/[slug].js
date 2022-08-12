@@ -72,6 +72,5 @@ const Wrapper = styled.div`
     width: 75%;
   }
 `
-const Img = styled.img``
 
 export default PostDetail
