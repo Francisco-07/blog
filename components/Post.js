@@ -9,13 +9,14 @@ const Post = ({ title, subtitle, img, slug, publishedAt, alt }) => {
       <ImgContainer>
         <Image priority={true} layout='fill' src={img} alt={alt} />
       </ImgContainer>
+
       <InfoContainer>
+        <Published>{publishedAt}</Published>
         <h2>{title}</h2>
         <p>{subtitle}</p>
       </InfoContainer>
-      <Published>{publishedAt}</Published>
+
       <Button>
-        {' '}
         <Link href={`/posts/${slug}`}>
           <a>LEER MAS</a>
         </Link>
@@ -79,12 +80,9 @@ const Button = styled.div`
 `
 
 const Published = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.5rem;
-  font-size: 1.2rem;
   font-weight: bold;
+  color: grey;
+  padding: 5px 0;
 `
 
 export default Post

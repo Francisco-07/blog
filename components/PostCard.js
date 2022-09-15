@@ -10,10 +10,10 @@ const PostCard = ({ title, subtitle, img, slug, publishedAt, alt }) => {
         <Image priority={true} layout='fill' src={img} alt={alt} />
       </ImgContainer>
       <InfoContainer>
+        <Published>{publishedAt}</Published>
         <h2>{title}</h2>
         <p>{subtitle}</p>
       </InfoContainer>
-      <Published>{publishedAt}</Published>
       <Button>
         <Link href={`/posts/${slug}`}>
           <a>LEER MAS</a>
@@ -36,13 +36,8 @@ const Container = styled.div`
   }
 `
 const Published = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: white;
-  padding: 1rem;
-  font-size: 1.2rem;
   font-weight: bold;
+  color: grey;
 `
 
 const ImgContainer = styled.div`
@@ -61,6 +56,9 @@ const ImgContainer = styled.div`
 const InfoContainer = styled.div`
   padding: 0.3rem;
   margin-bottom: 2rem;
+  h2 {
+    margin: 0;
+  }
 `
 
 const Button = styled.div`

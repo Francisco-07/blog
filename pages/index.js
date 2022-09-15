@@ -12,7 +12,6 @@ export default function Home({ posts }) {
   return (
     <div>
       <Navbar />
-      <Author />
       <FilterMenu
         order={() => setFilter(!filter)}
         listView={() => setListFilter(!listFilter)}

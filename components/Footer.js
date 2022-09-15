@@ -16,14 +16,14 @@ const Footer = () => {
           </RedesContainer>
         </Contact>
         <Logo>
-          <h1>JD</h1>
+          <h1>SB</h1>
         </Logo>
         <FormContainer>
           <Form>
-            <h2>SIGN UP IN THE NEWLETTER</h2>
-            <input placeholder='NAME' />
+            <h2>NEWSLETTER</h2>
+            <input placeholder='NOMBRE' />
             <input placeholder='EMAIL' />
-            <button>SUBSCRIBE</button>
+            <button>SUSCRIBIRTE</button>
           </Form>
         </FormContainer>
       </Container>
@@ -50,10 +50,13 @@ const RedesContainer = styled.div`
   align-items: center;
   height: 60%;
   gap: 3rem;
+
   svg {
     font-size: 2.1rem;
+    opacity: 0.7;
+    cursor: pointer;
     &:hover {
-      color: ${colors.yellow};
+      opacity: 1;
     }
   }
 `
@@ -88,6 +91,7 @@ const Form = styled.form`
     border: 1px solid ${colors.black};
     color: ${colors.black};
     background-color: ${colors.grey};
+    cursor: pointer;
     &:hover {
       background-color: ${colors.darkBlue};
       color: white;

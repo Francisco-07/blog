@@ -4,7 +4,7 @@ const Context = createContext()
 
 export function ThemeProvider({ children }) {
   const [filter, setFilter] = useState(false)
-  const [listFilter, setListFilter] = useState(false)
+  const [listFilter, setListFilter] = useState(true)
 
   return (
     <Context.Provider value={{ filter, setFilter, listFilter, setListFilter }}>
