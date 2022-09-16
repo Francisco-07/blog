@@ -32,10 +32,10 @@ export const PaginatedPosts = ({ posts, filter, listFilter }) => {
         <Btn onClick={() => setSize(size + 1)} disabled={isReachingEnd}>
           {' '}
           {isLoadingMore
-            ? 'LOADING...'
+            ? '...'
             : isReachingEnd
-            ? 'NO MORE POSTS'
-            : 'LOAD MORE'}
+            ? 'NO HAY MAS POSTS'
+            : 'MAS POSTS'}
         </Btn>
       </BtnContainer>
     </>
